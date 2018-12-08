@@ -1,0 +1,21 @@
+img
+{
+    filter: blur(.5rem);
+    float: left;
+    margin: 1.66%;
+    transition: filter .5s;
+    width: 30%;
+}
+
+img:hover
+{
+    filter: blur(0);
+}
+.caption
+{
+    border-bottom: thin solid #8c8c8c;
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    margin: 1.66%;
+    width: 30%;
+}
