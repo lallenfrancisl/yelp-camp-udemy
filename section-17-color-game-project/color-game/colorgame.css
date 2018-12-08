@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway');
+
+html,
+body {
+    background-color: #222526;
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+    transition-duration: 1s;
+}
+
+h1 {
+    background-color: #73d194;
+    color: white;
+    font-size: 2.5em;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    transition-duration: 1s;
+}
+
+button {
+    background: none;
+    border: 0;
+    height: 100%;
+    padding: 0;
+    transition-duration: 0.5s;
+}
+
+#game-area {
+    margin: 1em auto;
+    padding: 0;
+    width: 30%;
+}
+
+#new-game:hover,
+#easy:hover,
+#hard:hover {
+    background-color: #0857ec;
+    color: white;
+    cursor: pointer;
+}
+
+#easy,
+#hard {
+    /*     margin: 0 0.25em */
+}
+
+#game-feedback {
+    display: inline-block;
+    width: 20vw;
+}
+
+.game-controls {
+    background-color: white;
+    font-weight: bold;
+    height: 3em;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.color-square {
+    border-radius: 20%;
+    float: left;
+    margin: 1.66%;
+    padding-top: 30%;
+    transition-duration: 1s;
+    width: 30%;
+}
+
+.selected {
+    background-color: #0857ec;
+    color: white;
+}
+
+@media (max-width: 560px) {
+    #game-feedback {
+        font-size: 0.7em;
+        color: red;
+    }
+    #game-area {
+        width: 50%;
+    }
+}
