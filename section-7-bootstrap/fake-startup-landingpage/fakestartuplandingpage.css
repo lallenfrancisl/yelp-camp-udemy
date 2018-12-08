@@ -1,0 +1,75 @@
+html {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    width: 75vw;
+}
+
+.navbar-inverse {
+    margin-bottom: -1rem;
+    border: 0;
+    border-radius: 0;
+    background-color: transparent;
+}
+
+.page-header {
+    background: no-repeat center/cover url("https://source.unsplash.com/GtwiBmtJvaU");
+    border: 0;
+    color: white;
+    text-align: center;
+    height: 100vh;
+    font-family: 'Lily Script One', cursive;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.page-header h1 {
+    margin-top: 0;
+    font-size: 80px;
+    padding-top: 45vh;
+    font-family: 'Lily Script One', cursive;
+}
+
+.navbar-inverse .navbar-brand {
+    font-family: 'Lily Script One', cursive;
+    font-size: 40px;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    color: white;
+    font-weight: bold;
+    background-color: rgb(155, 157, 162);
+    background-color: rgba(155, 157, 162, 0.5);
+}
+
+.navbar-inverse .navbar-nav > .active > a:hover {
+    background-color: rgb(155, 157, 162);
+    background-color: rgba(155, 157, 162, 0.5);
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+    font-weight: bold;
+    font-size: 17px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+    transition-duration: 0.5s;
+    background-color: rgb(155, 157, 162);
+    background-color: rgba(155, 157, 162, 0.5);
+}
+
+.navbar-inverse .navbar-toggle {
+    border-radius: 0;
+    border: 0;
+}
+
+.navbar-inverse .navbar-toggle:focus, .navbar-inverse .navbar-toggle:hover {
+    transition-duration: 0.5s;
+    background-color: rgb(155, 157, 162);
+    background-color: rgba(155, 157, 162, 0.5);
+}
