@@ -1,0 +1,122 @@
+* {
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 5vh 0 5vh 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+body {
+    background-image: linear-gradient(to right, rgb(255, 241, 235) 0%, rgb(172, 224, 249) 100%);
+    left: -1245px;
+    top: -1343px;
+}
+
+h1 {
+    text-align: center;
+    margin: 0;
+}
+ul {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    width: 35vw;
+    line-height: 2em;
+}
+
+li {
+    border: solid #026cb3;
+    border-width: 2px 2px 0 2px;
+    font-size: 1.25em;
+    height: 2em;
+/*     line-height: 2em; */
+}
+
+li:last-child {
+    border-bottom: 2px solid #026cb3;
+}
+
+i:hover, li:hover {
+    cursor: pointer;
+}
+
+input, #add-new-todo {
+    font-size: 1.5em;
+    vertical-align: middle;
+    height: 2em;
+}
+
+input {
+    width: 30vw;
+    border: 2px solid #026cb3;
+}
+
+
+.todo-display {
+    text-align: center;
+    width: 40vw;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.sr-only {
+    height: 0;
+    width: 0;
+    font-size: 0;
+}
+
+.add-new {
+    margin: 0.5vw;
+}
+
+.completed {
+    color: gray;
+    text-decoration: line-through;
+}
+
+.todo-text {
+    display: inline-block;
+    width: 29vw;
+    text-align: left;
+    padding-left: 0.1em;
+    float: left;
+}
+
+.delete-button, .dbl-ticks {
+    display: inline-block;
+    height: 100%;
+    transition: width 0.5s, font-size 0.5s;
+}
+
+.delete-button {
+    background-color: red;
+    color: white;
+    width: 2.5vw;
+    float: left;
+/*     display: none; */
+}
+
+.dbl-ticks {
+    background-color: green;
+    color: white;
+    float: right;
+    width: 0;
+    font-size: 0;
+}
+
+.completedTicks {
+    width: 3vw;
+    font-size: 1.25em;
+}
+
+#add-new-todo {
+    display: inline-block;
+    border: none;
+    width: 5vw;
+    padding: 0.25em 0;
+    background-color: #026CB3;
+    color: white;
+}
