@@ -1,0 +1,17 @@
+{
+  "name": "section-26-intermediateexpress",
+  "version": "1.0.0",
+  "description": "Intermediate Express Exercise",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "Allen Francis",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4"
+  }
+}
