@@ -1,0 +1,24 @@
+{
+  "name": "webdevbootcampcolt",
+  "version": "1.0.0",
+  "description": "All the npm packages needed for the course",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lallenfrancisl/the-web-developer-bootcamp-colt-steele-udemy.git"
+  },
+  "author": "Allen Francis",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lallenfrancisl/the-web-developer-bootcamp-colt-steele-udemy/issues"
+  },
+  "homepage": "https://github.com/lallenfrancisl/the-web-developer-bootcamp-colt-steele-udemy#readme",
+  "dependencies": {
+    "cat-me": "^1.0.3",
+    "faker": "^4.1.0",
+    "knock-knock-jokes": "^1.7.0"
+  }
+}
