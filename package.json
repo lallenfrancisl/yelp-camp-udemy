@@ -18,7 +18,9 @@
   "homepage": "https://github.com/lallenfrancisl/the-web-developer-bootcamp-colt-steele-udemy#readme",
   "dependencies": {
     "cat-me": "^1.0.3",
+    "express": "^4.17.1",
     "faker": "^4.1.0",
-    "knock-knock-jokes": "^1.7.0"
+    "knock-knock-jokes": "^1.7.0",
+    "nodemon": "^1.19.3"
   }
 }
