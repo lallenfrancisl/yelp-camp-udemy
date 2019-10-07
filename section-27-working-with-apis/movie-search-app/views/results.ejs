@@ -1,0 +1,9 @@
+<h1>Search Results</h1>
+
+<ul>
+<% results['Search'].forEach((movie) => { %>
+    <li><%= movie['Title'] %></li>
+<% }) %>
+</ul>
+
+<a href="/">Search Again</a>
