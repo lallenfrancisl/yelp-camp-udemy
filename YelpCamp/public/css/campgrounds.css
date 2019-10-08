@@ -1,0 +1,52 @@
+.hero {
+    width: 100%;
+    background: rgba(123, 103, 255, 0.5);
+    padding: 1em;
+}
+
+.hero h2 {
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    padding: 0 2.5%;
+    flex-wrap: wrap;
+}
+
+.campgrounds-list {
+    margin: 2em 0 0 0;
+}
+
+.campground {
+    width: 24%;
+    margin: 0 0.5%;
+}
+
+.campground-details {
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+.campground-img {
+    width: 100%;
+}
+
+.campground-name {
+    text-align: center;
+    margin: 0.25em 0;
+}
+
+@media (max-width: 992px) {
+    .campground {
+        width: 32%;
+    }
+}
+
+@media (max-width: 675px) {
+    .campground {
+        width: 100%;
+    }
+}

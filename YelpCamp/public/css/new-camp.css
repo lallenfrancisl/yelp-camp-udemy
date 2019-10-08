@@ -1,0 +1,14 @@
+.container.new-camp-form {
+    width: 30%;
+    margin: 0 auto;
+}
+
+.form-title {
+    text-align: center;
+}
+
+.form-group {
+    display: block;
+    width: 100%;
+    margin: 1em 0;
+}
