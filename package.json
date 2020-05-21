@@ -25,5 +25,8 @@
     "knock-knock-jokes": "^1.7.0",
     "nodemon": "^2.0.4",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "locus": "^2.0.4"
   }
 }

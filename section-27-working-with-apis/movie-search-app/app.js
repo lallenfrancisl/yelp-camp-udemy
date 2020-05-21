@@ -18,16 +18,27 @@ app.get('/', (req, res) => {
 
 app.get('/results', (req, res) => {
     let bodyObj = null;
-    let url = 'http://www.omdbapi.com/?s=' + req.query.search.toLowerCase() + '&apikey=thewdb';
+    let url = 'http://www.omdbapi.com/?s=' + req.query.search.toLowerCase().trim() + '&apikey=thewdb';
     request(
         url,
         (error, response, body) => {
             if (!error && response.statusCode == 200) {
                 bodyObj = JSON.parse(body);
                 console.log('Response received');
-                res.render('results', {
-                    results: bodyObj
-                });
+                console.log(bodyObj)
+
+                // check if the movie query has a match
+                if (bodyObj.Response === 'True') {
+                    res.render('results', {
+                        results: bodyObj
+                    });
+                }
+                else {
+                    res.render('results', {
+                        results: {Search: [{Title: 'Movie not found !!!'}]}
+                    });
+                }
+
             }
             else {
                 res.render('results', {
