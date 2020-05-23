@@ -7,20 +7,13 @@ app.set('view engine', 'ejs');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
-// path to the default stylesheets that should be added to every page
-let defaultStyles = ['/css/lib/bootstrap-grid.min.css', '/css/main.css', '/css/common.css'],
-    defaultScripts = ['/js/common.js'];
+/**
+ * Global variables
+ */
 
-// Landing page
-app.get('/', (_req, res) => {
-    styles = [], scripts = [];
-    res.render('index', {
-        defaultStyles: defaultStyles,
-        styles: styles,
-        defaultScripts: defaultScripts,
-        scripts: scripts
-    });
-});
+// path to the default stylesheets that should be added to every page
+let defaultStyles = ['/css/lib/bootstrap-grid.min.css', '/css/common.css'],
+    defaultScripts = ['/js/common.js'];
 
 // List all the campgrounds
 let campgrounds = [
@@ -40,6 +33,21 @@ let campgrounds = [
     {name: 'Damodarji\'s Pettikkada Camp', image: 'dino-reichmuth-pl1mhwMctJc-unsplash.jpg'},
     {name: 'Subru\'s Camp', image: 'ridwan-kosasih-vXzSkC3-n5I-unsplash.jpg'}
 ];
+
+// ------------------------------------------------------------------------------------------
+
+// Home page
+app.get('/', (_req, res) => {
+    styles = [], scripts = [];
+    styles.push('/css/index.css');
+    res.render('index', {
+        defaultStyles: defaultStyles,
+        styles: styles,
+        defaultScripts: defaultScripts,
+        scripts: scripts,
+        campgrounds: campgrounds
+    });
+});
 
 // campgrounds page
 app.get('/campgrounds', (_req, res) => {

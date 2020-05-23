@@ -1,7 +1,41 @@
-<% include partials/header %>
+<%- include('partials/header') %>
 
-<h1>Landing Page</h1>
+<header class="hero d-flex align-items-center justify-content-center">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>
+            YelpCamp
+        </h1>
+        <p class="subtitle">
+            Where campers go searching !
+        </p>
+        <a href="/campgrounds" class="btn-pri">Find Camps</a>
+    </div>
+</header>
 
-<p>Welcome to landing page</p>
+<main class="highest-rated-cgs">
+    <div class="cgs-list container">
+        <h2>
+            Top Rated
+            <ion-icon name="star"></ion-icon>
+        </h2>
+        <div class="row">
+            <% campgrounds.forEach((campground) => { %>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="cg">
+                        <img src="<%= '/img/' + campground.image %>" alt="image of campground" class="camp-img"><!--
+                        --><div class="cg-details"><!--
+                            --><p class="cg-name"><%= campground.name %></p>
+                            <p class="cg-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Officiis, quibusdam omnis iure nobis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
+        </div>
+    </div>
+</main>
 
-<% include partials/footer %>
+<%- include('partials/footer') %>
