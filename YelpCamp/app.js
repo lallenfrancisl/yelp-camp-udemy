@@ -3,13 +3,23 @@ let express = require('express'),
     bodyParser = require('body-parser');
 
 app.set('view engine', 'ejs');
+
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({extended: true}));
 
+// path to the default stylesheets that should be added to every page
+let defaultStyles = ['/css/lib/bootstrap-grid.min.css', '/css/main.css', '/css/common.css'],
+    defaultScripts = ['/js/common.js'];
 
 // Landing page
 app.get('/', (_req, res) => {
-    res.render('index');
+    styles = [], scripts = [];
+    res.render('index', {
+        defaultStyles: defaultStyles,
+        styles: styles,
+        defaultScripts: defaultScripts,
+        scripts: scripts
+    });
 });
 
 // List all the campgrounds
@@ -30,8 +40,16 @@ let campgrounds = [
     {name: 'Damodarji\'s Pettikkada Camp', image: 'dino-reichmuth-pl1mhwMctJc-unsplash.jpg'},
     {name: 'Subru\'s Camp', image: 'ridwan-kosasih-vXzSkC3-n5I-unsplash.jpg'}
 ];
+
+// campgrounds page
 app.get('/campgrounds', (_req, res) => {
+    styles = [], scripts = [];
+    styles.push('/css/campgrounds.css')
     res.render('campgrounds', {
+        defaultStyles: defaultStyles,
+        styles: styles,
+        defaultScripts: defaultScripts,
+        scripts: scripts,
         campgrounds: campgrounds
     });
 });
@@ -48,7 +66,14 @@ app.post('/campgrounds', (req, res) => {
 
 // form for adding new campground
 app.get('/campgrounds/new', (req, res) => {
-    res.render('new-camp.ejs');
+    styles = [], scripts = [];
+    styles.push('/css/new-camp.css')
+    res.render('new-camp.ejs', {
+        defaultStyles: defaultStyles,
+        styles: styles,
+        defaultScripts: defaultScripts,
+        scripts: scripts
+    });
 });
 
 

@@ -51,6 +51,7 @@ body, html {
     border: none;
     border-radius: 3px;
     text-decoration: none;
+    cursor: pointer;
 }
 
 .btn:visited {
