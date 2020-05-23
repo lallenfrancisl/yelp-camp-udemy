@@ -1,17 +1,24 @@
-<% include partials/header %>
+<%- include('partials/header') %>
 
-<link rel="stylesheet" href="/css/new-camp.css">
+<div class="overlay"></div>
 
-<h1 class="form-title">Add new campgrounds page</h1>
 
-<div class="container new-camp-form">
-    <form action="/campgrounds" method="post">
-        <input class="form-group form-control" type="text" name="name" placeholder="Name of the campground">
-        <input class="form-group form-control" type="text" name="image" placeholder="URL to the campground image">
-        <button class="form-group btn" type="submit">Submit</button>
-    </form>
-    <a href="/campgrounds">Go back</a>
+<div class="container-fluid">
+    <div class="row form-container d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+            <div class="form-add-camp">
+                <h1 class="form-title">Add to our collection</h1>
+                <form action="/campgrounds" method="post">
+                    <label for="camp-name">Name: </label>
+                    <input id="camp-name" class="form-inp" type="text" name="name" placeholder="Name of the campground" required>
+                    <label for="camp-img-url">Image URL:</label>
+                    <input id="camp-img-url" class="form-inp" type="text" name="image" placeholder="URL to the campground image" required>
+                    <button class="form-inp btn-pri" type="submit">Submit</button>
+                </form>
+                <a class="back-to-home" href="/campgrounds">< Go back</a>
+            </div>
+        </div>
+    </div>
 </div>
 
-
-<% include partials/footer %>
+<%- include('partials/footer') %>

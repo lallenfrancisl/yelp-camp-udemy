@@ -1,14 +1,88 @@
-.container.new-camp-form {
-    width: 30%;
-    margin: 0 auto;
+body {
+    position: relative;
+    padding-top: 5rem;
+    padding-bottom: 2em;
+    background: center/cover url("../img/dino-reichmuth-5Rhl-kSRydQ-unsplash.jpg");
+    min-height: 100vh;
+    z-index: 0;
 }
 
-.form-title {
-    text-align: center;
-}
-
-.form-group {
-    display: block;
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
     width: 100%;
-    margin: 1em 0;
+    background: black;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+
+h1 {
+    text-align: center;
+    margin: 0 0 1em 0;
+    font-size: 2.5rem;
+}
+
+nav {
+    background: transparent;
+}
+
+.form-add-camp {
+    position: relative;
+    box-shadow: -1px 7px 16px -2px rgba(0, 0, 0, 0.25);
+    margin-top: 1.5em;
+    padding: 2em 1em 1em 1em;
+    border-radius: 6px;
+    background: white;
+    z-index: 2;
+}
+
+.form-inp {
+    display: block;
+    width: 95%;
+    margin: 1em auto 1em auto;
+    font-size: 0.9rem;
+    border-radius: 6px;
+    border: 1px solid #d1d5da;
+    padding: 0.5em 0.5em;
+}
+
+.form-inp:focus {
+    border-color: #005792;
+    position: relative;
+    box-shadow: -1px 7px 16px -2px rgba(0, 0, 0, 0.25);
+}
+
+.form-add-camp label {
+    padding: 0.5em 0.7em;
+}
+
+.form-add-camp .btn-pri {
+    border: none;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-top: 3em;
+}
+
+.back-to-home {
+    display: block;
+    color: #081621;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 2em;
+    text-decoration: none;
+}
+
+.back-to-home:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 430px) {
+    h1 {
+        font-size: 1.75rem;
+    }
 }

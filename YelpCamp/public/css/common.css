@@ -8,6 +8,7 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #081621;
     background: #f6f6e9;
+    width: 100vw;
 }
 
 .btn-pri {
