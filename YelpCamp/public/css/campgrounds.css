@@ -1,52 +1,105 @@
+nav {
+    background: transparent;
+}
+
 .hero {
-    width: 100%;
-    background: rgba(123, 103, 255, 0.5);
-    padding: 1em;
+    position: relative;
+    height: 70vh;
+    background: center/cover url("../img/dino-reichmuth-pl1mhwMctJc-unsplash.jpg");
+    z-index: 0;
+    box-shadow: 0px 14px 15px -4px rgba(0, 0, 0, 0.25);
 }
 
-.hero h2 {
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: black;
+    opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+}
+
+.hero-content {
+    z-index: 1;
+    color: white;
+}
+
+h1 {
     margin: 0;
+    font-size: 4rem;
 }
 
-.container {
-    display: flex;
-    padding: 0 2.5%;
-    flex-wrap: wrap;
-}
-
-.campgrounds-list {
-    margin: 2em 0 0 0;
-}
-
-.campground {
-    width: 24%;
-    margin: 0 0.5%;
-}
-
-.campground-details {
-    border: 1px solid grey;
-    border-radius: 5px;
-    padding: 0.5em;
-    margin-bottom: 1em;
-}
-
-.campground-img {
-    width: 100%;
-}
-
-.campground-name {
+.hero .subtitle {
     text-align: center;
-    margin: 0.25em 0;
+    margin-top: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 600;
 }
 
-@media (max-width: 992px) {
-    .campground {
-        width: 32%;
-    }
+.hero .btn-pri {
+    position: relative;
+    display: block;
+    padding: 0.5em 1em;
+    background: linear-gradient(90deg, rgba(230,57,70,1) 0%, rgba(255,166,48,1) 100%);
+    color: white;
+    font-size: 1.3rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    height: 2.5rem;
+    width: 10rem;
+    line-height: 1;
+    z-index: 0;
+    margin: 0 auto;
 }
 
-@media (max-width: 675px) {
-    .campground {
-        width: 100%;
+.cgs-list h2{
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1em;
+    color: #081621;
+}
+
+.cgs-list ion-icon {
+    color: orange;
+    font-size: 1.5rem;
+}
+
+.cg {
+    width: 100%;
+    height: 23rem;
+    margin-bottom: 2em;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: -1px 7px 16px -2px rgba(0, 0, 0, 0.25);
+}
+
+.cg img {
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    border-radius: 6px 6px 0 0;
+}
+
+.cg-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin: 0;
+    background: #005792;
+    color: white;
+    padding: 0.5em;
+}
+
+.cg-text {
+    text-align: justify;
+    padding: 0 1em 1em 1em;
+}
+
+@media (max-width: 520px) {
+    h1 {
+        font-size: 2.3rem;
     }
 }

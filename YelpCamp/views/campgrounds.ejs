@@ -1,22 +1,39 @@
-<% include partials/header %>
-<link rel="stylesheet" href="/css/campgrounds.css">
+<%- include('partials/header') %>
 
-<header>
-    <section class="hero">
-        <h1>Welcome To YelpCamp</h1>
-        <p>Have a look at the best campgrounds in the world</p>
-        <a class="btn" href="/campgrounds/new">Add new campground</a>
-    </section>
+<header class="hero d-flex align-items-center justify-content-center">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1>
+            Our Campgrounds
+        </h1>
+        <p class="subtitle">
+            Take a look at our campgrounds
+        </p>
+    </div>
 </header>
 
-<div class="container campgrounds-list">
-    <% campgrounds.forEach((campground) => { %>
-        <div class="campground">
-            <div class="campground-details">
-                <img class="campground-img" src="<%= '/img/' + campground.image %>" alt="Image of the campground">
-                <h4 class="campground-name"><%= campground.name %></h4>
-            </div>
+<main class="highest-rated-cgs">
+    <div class="cgs-list container">
+        <h2>
+            Campgrounds
+        </h2>
+        <div class="row">
+            <% campgrounds.forEach((campground) => { %>
+                <div class="col-12 col-md-4 col-lg-3">
+                    <div class="cg">
+                        <img src="<%= '/img/' + campground.image %>" alt="image of campground" class="camp-img"><!--
+                        --><div class="cg-details"><!--
+                            --><p class="cg-name"><%= campground.name %></p>
+                            <p class="cg-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Officiis, quibusdam omnis iure nobis.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% }); %>
         </div>
-    <% }); %>
-</div>
-<% include partials/footer %>
+    </div>
+</main>
+
+<%- include('partials/footer') %>
