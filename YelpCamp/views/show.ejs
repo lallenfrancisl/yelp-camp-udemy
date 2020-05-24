@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<header class="hero d-flex align-items-center justify-content-center">
+    <div class="hero-overlay"></div>
+    <img class="bg" src="<%= '/img/' + campground.image %>">
+    <div class="hero-content">
+        <h1>
+            <%= campground.name %>
+        </h1>
+    </div>
+</header>
+
+<main class="campground-desc">
+    <div class="container">
+        <h2><%= campground.name %></h2>
+        <div class="row justify-content-center">
+            <p class="campground-desc col-12 col-md-9">
+                <%= campground.description %>
+            </p>
+        </div>
+    </div>
+</main>
+
+<%- include('partials/footer') %>

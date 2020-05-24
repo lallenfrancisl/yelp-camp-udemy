@@ -8,7 +8,7 @@ body {
     font-family: 'Source Sans Pro', sans-serif;
     color: #081621;
     background: #f6f6e9;
-    width: 100vw;
+    width: 100%;
 }
 
 .btn-pri {
@@ -16,7 +16,6 @@ body {
     display: inline-block;
     padding: 0.5em 1.5em;
     border-radius: 6px;
-    background: blue;
     background: linear-gradient(90deg, rgba(230,57,70,1) 0%, rgba(255,166,48,1) 100%);
     color: white;
     font-size: 1.3rem;

@@ -70,16 +70,16 @@ h1 {
 
 .cg {
     width: 100%;
-    height: 23rem;
+    height: 27rem;
     margin-bottom: 2em;
     border-radius: 6px;
     position: relative;
-	box-shadow: -1px 7px 16px -2px rgba(0, 0, 0, 0.25);
+    box-shadow: -1px 7px 16px -2px rgba(0, 0, 0, 0.25);
 }
 
 .cg img {
     width: 100%;
-    height: 50%;
+    height: 40%;
     object-fit: cover;
     border-radius: 6px 6px 0 0;
 }
@@ -96,4 +96,15 @@ h1 {
 .cg-text {
     text-align: justify;
     padding: 0 1em 1em 1em;
+}
+
+.cg .btn-pri {
+    position: absolute;
+    right: 1em;
+    bottom: 1em;
+    padding: 0.5em 1em;
+    font-size: 1.2rem;
+    height: 2.4rem;
+    line-height: 1;
+    margin: 0 0 0 1em;
 }
