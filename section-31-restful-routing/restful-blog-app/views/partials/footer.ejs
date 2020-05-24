@@ -1,0 +1,13 @@
+    <% scripts.forEach((script) => { %>
+        <script src="<%= script %>" type="text/javascript" charset="utf-8" async defer></script>
+    <% }); %>
+    <!--add default scripts -->
+    <% for (let i = 0; i < defaultScripts.length; ++i) { %>
+        <script src="<%= defaultScripts[i] %>" charset="utf-8" async defer></script>
+    <% } %>
+    <!--add page specific scripts -->
+    <% for (let i = 0; i < scripts.length; ++i) { %>
+        <script src="<%= scripts[i] %>" charset="utf-8" async defer></script>
+    <% } %>
+</body>
+</html>
