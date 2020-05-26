@@ -26,6 +26,10 @@ body {
     margin-right: 1em;
 }
 
+button.btn-pri {
+    border: none;
+}
+
 .btn-pri:hover {
     -webkit-transform: translateY(-10%);
     transform: translateY(-10%);

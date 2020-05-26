@@ -1,0 +1,7 @@
+<h1>Edit comment</h1>
+
+<form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+    <label for="text">Comment</label>
+    <input id="text" type="text" name="comment[text]" value="<%= comment.text %>" placeholder="Enter the comment">
+    <button type="submit">Comment</button>
+</form>

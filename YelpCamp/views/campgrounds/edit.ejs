@@ -1,0 +1,26 @@
+<%- include('../partials/header') %>
+
+<div class="overlay"></div>
+
+
+<div class="container-fluid">
+    <div class="row form-container d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-7 col-lg-6 col-xl-5">
+            <div class="form-add-camp">
+                <h1 class="form-title">Edit <%= campground.name %></h1>
+                <form action="/campgrounds/<%= campground._id %>?_method=PUT" method="POST">
+                    <label for="camp-name">Name: </label>
+                    <input id="camp-name" class="form-inp" type="text" name="campground[name]" placeholder="Name of the campground" value="<%= campground.name %>" required>
+                    <label for="camp-img-url">Image URL:</label>
+                    <input id="camp-img-url" class="form-inp" type="text" name="campground[image]" placeholder="URL to the campground image" value="<%= campground.image %> required>
+                    <label for="camp-desc">Camp Description: </label>
+                    <textarea id="camp-desc" class="form-inp" name="campground[description]" placeholder="Enter a small description" required><%= campground.description %></textarea>
+                    <button class="form-inp btn-pri" type="submit">Submit</button>
+                </form>
+                <a class="back-to-home" href="/campgrounds/<%= campground._id%>">< Go back</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>

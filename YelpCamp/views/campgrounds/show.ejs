@@ -1,4 +1,4 @@
-<%- include('partials/header') %>
+<%- include('../partials/header') %>
 
 <header class="hero d-flex align-items-center justify-content-center">
     <div class="hero-overlay"></div>
@@ -7,6 +7,9 @@
         <h1>
             <%= campground.name %>
         </h1>
+        <p class="subtitle">
+            Created by: <%= campground.author.username %>
+        </p>
     </div>
 </header>
 
@@ -17,6 +20,14 @@
             <p class="campground-desc col-12 col-md-9">
                 <%= campground.description %>
             </p>
+
+            <% if (user && campground.author.id.equals(user._id)) { %>
+                <a href="/campgrounds/<%= campground._id %>/edit" class="btn-pri">Edit</a>
+                <form action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+                    <button class="btn-pri" type="submit">Delete</button>
+                </form>
+            <% } %>
+
         </div>
     </div>
 
@@ -26,8 +37,6 @@
     <% if(user) { %>
         <div class="add-comment-form">
             <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
-                <label for="author">Username</label>
-                <input id="author" type="text" name="comment[author]" placeholder="Enter your username">
                 <label for="text">Comment</label>
                 <input id="text" type="text" name="comment[text]" placeholder="Enter the comment">
                 <button type="submit">Comment</button>
@@ -39,9 +48,15 @@
 
     <% campground.comments.forEach((comment) => { %>
         <p>
-            <strong><%= comment.author %></strong> - <%= comment.text %>
+            <strong><%= comment.author.username %></strong> - <%= comment.text %>
         </p>
+        <% if (user && comment.author.id.equals(user._id)) { %>
+            <a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="btn-pri">Edit comment</a>
+            <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                <button class="btn-pri" type="submit">Delete</button>
+            </form>
+        <% } %>
     <% });%>
 </main>
 
-<%- include('partials/footer') %>
+<%- include('../partials/footer') %>
