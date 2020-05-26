@@ -2,7 +2,7 @@
 
 <header class="hero d-flex align-items-center justify-content-center">
     <div class="hero-overlay"></div>
-    <img class="bg" src="<%= '/img/' + campground.image %>">
+    <img class="bg" src="<%= campground.image %>">
     <div class="hero-content">
         <h1>
             <%= campground.name %>
@@ -19,6 +19,29 @@
             </p>
         </div>
     </div>
+
+    <h2>Comments</h2>
+
+
+    <% if(user) { %>
+        <div class="add-comment-form">
+            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                <label for="author">Username</label>
+                <input id="author" type="text" name="comment[author]" placeholder="Enter your username">
+                <label for="text">Comment</label>
+                <input id="text" type="text" name="comment[text]" placeholder="Enter the comment">
+                <button type="submit">Comment</button>
+            </form>
+        </div>
+    <% } else { %>
+        <a href="/login" class="btn-pri">Log in to comment</a>
+    <% } %>
+
+    <% campground.comments.forEach((comment) => { %>
+        <p>
+            <strong><%= comment.author %></strong> - <%= comment.text %>
+        </p>
+    <% });%>
 </main>
 
 <%- include('partials/footer') %>

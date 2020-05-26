@@ -23,11 +23,11 @@
             <% campgrounds.forEach((campground) => { %>
                 <div class="col-12 col-md-4 col-lg-3">
                     <div class="cg">
-                        <img src="<%= '/img/' + campground.image %>" alt="image of campground" class="camp-img"><!--
+                        <img src="<%= campground.image %>" alt="image of campground" class="camp-img"><!--
                         --><div class="cg-details"><!--
                             --><p class="cg-name"><%= campground.name %></p>
                             <p class="cg-text">
-                                <%= campground.description %>
+                                <%= campground.description.slice(0, 150) %>....
                             </p>
                             <a href="<%= '/campgrounds/' + campground._id %>" class="btn-pri">Learn More</a>
                         </div>
