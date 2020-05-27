@@ -19,5 +19,19 @@
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^6.0.1",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lallenfrancisl/yelp-camp.git"
+  },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "mongodb"
+  ],
+  "bugs": {
+    "url": "https://github.com/lallenfrancisl/yelp-camp/issues"
+  },
+  "homepage": "https://github.com/lallenfrancisl/yelp-camp#readme"
 }

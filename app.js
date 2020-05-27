@@ -14,7 +14,18 @@ let express = require('express'),
     User = require('./models/user');
 
 // connect to mongo database
-mongoose.connect('mongodb://localhost/yelp_camp', { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false });
+const URL = process.env.DATABASEURL || 'mongodb://localhost/yelp_camp';
+mongoose.connect(URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+}).then(() => {
+    console.log('Connected to DB');
+}).catch((err) => {
+    console.error('ERROR: ', err.message);
+    process.exit(1);
+});
 
 app.set('view engine', 'ejs');
 
@@ -59,7 +70,7 @@ app.use(campgroundRoutes);
 app.use(commentsRoutes);
 app.use(authRoutes);
 
-const IP = '0.0.0.0', PORT = 3000;
+const IP = process.env.IP || '0.0.0.0', PORT = process.env.PORT || 3000;
 app.listen(PORT, IP, () => {
     console.log('Server has started at http://' + IP + ':' + PORT);
 });
