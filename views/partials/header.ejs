@@ -30,7 +30,7 @@
             <li><a href="/campgrounds/new">Add new</a></li>
             <% if(!user) { %>
                 <li><a class="login-btn" href="<%= '/login' + '?returnUrl=' + currentUrl %>">Login</a></li>
-                <li><a href="/register">Sign up</a></li>
+                <li><a href="/register<%= '?returnUrl=' + currentUrl %> %>">Sign up</a></li>
             <% } else {%>
                 <li><%= 'Welcome, ' + user.username %></li>
                 <li><a href="/logout">log out</a></li>
@@ -42,7 +42,7 @@
             <li><a href="/campgrounds/new">Add new</a></li>
             <% if(!user) { %>
                 <li><a class="login-btn" href="<%= '/login' + '?returnUrl=' + currentUrl %>">Login</a></li>
-                <li><a href="/register">Sign up</a></li>
+                <li><a href="/register<%= '?returnUrl=' + currentUrl %> %>">Sign up</a></li>
             <% } else {%>
                 <li>Welcome, <%= user.username %></li>
                 <li><a href="/logout">log out</a></li>

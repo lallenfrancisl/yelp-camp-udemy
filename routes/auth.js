@@ -9,10 +9,19 @@ let express = require('express'),
 
 // sign up routes
 router.get('/register', (req, res) => {
+    let returnUrl = req.url.split('returnUrl=');
+    if (returnUrl.length < 2) {
+        returnUrl = '/';
+    }
+    else {
+        returnUrl = returnUrl[returnUrl.length - 1];
+    }
+
     scripts = [], styles = ['/css/signup.css'];
     res.render('register', {
         styles: styles,
-        scripts: scripts
+        scripts: scripts,
+        returnUrl: returnUrl
     });
 });
 
@@ -22,15 +31,15 @@ router.post('/register', (req, res) => {
         if(err) {
             console.error(err);
             if(err.name == 'UserExistsError') {
-                res.redirect('/campgrounds');
+                res.redirect('/login?returnUrl=' + req.url.split('returnUrl=')[1]);
             }
             else {
-                res.redirect('/register');
+                res.redirect(req.url);
             }
         }
         else {
             passport.authenticate('local')(req, res, () => {
-                res.redirect('/campgrounds');
+                res.redirect(req.url.split('returnUrl=')[1]);
             });
         }
     });

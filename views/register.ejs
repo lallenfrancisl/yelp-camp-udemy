@@ -8,7 +8,7 @@
         <div class="col-12 col-md-7 col-lg-6 col-xl-5">
             <div class="form">
                 <h1 class="form-title">Sign Up</h1>
-                <form action="/register" method="POST">
+                <form action="/register?returnUrl=<%= returnUrl %>" method="POST">
                     <label for="username">Username</label>
                     <input id="username" class="form-inp" type="text" name="username" placeholder="Username" required>
                     <label for="password">Password</label>
