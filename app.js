@@ -53,6 +53,7 @@ app.use((req, res, next) => {
     // path to the default stylesheets that should be added to every page
     res.locals.defaultStyles = ['/css/lib/bootstrap-grid.min.css', '/css/common.css'],
     res.locals.defaultScripts = ['/js/common.js'];
+    res.locals.currentUrl = `${req.protocol}://${req.headers.host}${req.path}`;
     next();
 });
 

@@ -103,8 +103,8 @@ h1 {
     right: 1em;
     bottom: 1em;
     padding: 0.5em 1em;
-    font-size: 1.2rem;
+    font-size: 1rem;
     height: 2.4rem;
-    line-height: 1;
+    font-weight: 600;
     margin: 0 0 0 1em;
 }

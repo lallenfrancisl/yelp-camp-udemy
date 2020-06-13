@@ -31,32 +31,45 @@
         </div>
     </div>
 
-    <h2>Comments</h2>
-
-
-    <% if(user) { %>
-        <div class="add-comment-form">
-            <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
-                <label for="text">Comment</label>
-                <input id="text" type="text" name="comment[text]" placeholder="Enter the comment">
-                <button type="submit">Comment</button>
-            </form>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-12 col-md-9">
+                <h2>Comments</h2>
+                <% if(user) { %>
+                    <div class="add-comment-form">
+                        <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
+                            <label for="text">Comment</label>
+                            <textarea id="text" type="text" name="comment[text]" placeholder="Enter the comment"></textarea>
+                            <button class="btn-pri" type="submit">Comment</button>
+                        </form>
+                    </div>
+                <% } else { %>
+                    <a href="<%= `/login?returnUrl=${currentUrl}` %>" class="btn-pri">Log in to comment</a>
+                <% } %>
+            </div>
+            <% campground.comments.forEach((comment) => { %>
+                <div class="col-12 col-md-9">
+                    <div class="comment">
+                        <p class="comment-author">
+                            <strong><%= comment.author.username %></strong>
+                        </p>
+                        <p class="comment-text">
+                            <%= comment.text %>
+                        </p>
+                        <p class="comment-date">
+                            <%= new Date(comment.updatedAt).toDateString() %>
+                        </p>
+                        <% if (user && comment.author.id.equals(user._id)) { %>
+                            <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
+                                <a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="btn-pri">Edit</a>
+                                <button class="btn-pri" type="submit">Delete</button>
+                            </form>
+                        <% } %>
+                    </div>
+                </div>
+            <% });%>
         </div>
-    <% } else { %>
-        <a href="/login" class="btn-pri">Log in to comment</a>
-    <% } %>
-
-    <% campground.comments.forEach((comment) => { %>
-        <p>
-            <strong><%= comment.author.username %></strong> - <%= comment.text %>
-        </p>
-        <% if (user && comment.author.id.equals(user._id)) { %>
-            <a href="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>/edit" class="btn-pri">Edit comment</a>
-            <form action="/campgrounds/<%= campground._id %>/comments/<%= comment._id %>?_method=DELETE" method="POST">
-                <button class="btn-pri" type="submit">Delete</button>
-            </form>
-        <% } %>
-    <% });%>
+    </div>
 </main>
 
 <%- include('../partials/footer') %>

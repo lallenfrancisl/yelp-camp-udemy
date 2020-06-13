@@ -71,6 +71,64 @@ h1 {
     font-size: 2rem;
 }
 
+.add-comment-form {
+    background: white;
+    padding: 1em;
+    border-radius: 6px;
+}
+
+.add-comment-form>form * {
+    display: block;
+    margin-top: 1em;
+}
+
+.add-comment-form>form textarea {
+    margin-top: 0.5em;
+    width: 100%;
+    min-height: 5rem;
+    resize: vertical;
+    padding: 1em;
+    border-radius: 6px;
+    border: 1px solid #c4c4c4;
+    font-family: 'Source Sans Pro';
+}
+
+.add-comment-form .btn-pri {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.comment {
+    background: white;
+    padding: 0.5em 2em;
+    padding-bottom: 1.5em;
+    margin: 1em 0;
+    border-radius: 6px;
+    position: relative;
+    box-shadow: 0px 14px 15px -4px rgba(0, 0, 0, 0.25);
+}
+
+.comment form {
+    display: flex;
+}
+
+.comment .btn-pri {
+    height: 2.5rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.comment .btn-pri {
+    font-size: 16px;;
+}
+
+.comment .comment-author {
+    text-transform: capitalize;
+}
+
+.comment-date {
+    color: gray;
+}
 
 @media (max-width: 520px) {
     h1 {

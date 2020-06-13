@@ -39,23 +39,33 @@ router.post('/register', (req, res) => {
 
 // login routes
 router.get('/login', (req, res) => {
+    let returnUrl = req.url.split('returnUrl=');
+    if (returnUrl.length < 2) {
+        returnUrl = '/';
+    }
+    else {
+        returnUrl = returnUrl[returnUrl.length - 1];
+    }
+
     scripts = [], styles = ['/css/login.css'];
     res.render('login', {
         styles: styles,
-        scripts: scripts
+        scripts: scripts,
+        returnUrl: returnUrl
     });
 });
 
 router.post('/login', passport.authenticate('local', {
-    successRedirect: '/campgrounds',
     failureRedirect: '/login'
 }), (req, res) => {
+    res.redirect(req.url.split('returnUrl=')[1]);
+    // res.redirect('/campgrounds');
 });
 
 // logout routes
 router.get('/logout', (req, res) => {
     req.logout();
-    res.redirect('/campgrounds');
+    res.redirect('back');
 });
 
 
